@@ -27,3 +27,16 @@ https://alligator.io/react/axios-react/
 
 # Mock Api to get Data
 > http://rallycoding.herokuapp.com/api/music_albums 
+
+# Reactjs App Deployment using Github Pages
+https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+
+1. Add following commands in your package.json 'scripts' object:
+> "predeploy": "npm run build",
+> "deploy": "gh-pages -d build"
+
+2. instal gh-pages npm:
+> npm install --save gh-pages
+
+3. run build using following command:
+> npm run deploy
