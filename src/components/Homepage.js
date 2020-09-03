@@ -17,7 +17,7 @@ class Homepage extends React.Component{
     }
 
     getMovies() {
-        const url = 'http://rallycoding.herokuapp.com/api/music_albums ';
+        const url = 'https://rallycoding.herokuapp.com/api/music_albums ';
         
         axios.get(url)
         .then(res => {
