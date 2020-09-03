@@ -35,8 +35,13 @@ https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 > "predeploy": "npm run build",
 > "deploy": "gh-pages -d build"
 
-2. instal gh-pages npm:
+2. add following line above name property in package.json:
+"homepage": "https://muhammadawaisshaikh.github.io/reactjs-getting-started/"
+
+3. instal gh-pages npm:
 > npm install --save gh-pages
 
-3. run build using following command:
+4. include build directory to push on git: remove from gitignore
+
+5. run build using following command:
 > npm run deploy
