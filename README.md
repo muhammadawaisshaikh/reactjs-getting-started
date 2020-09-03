@@ -24,3 +24,6 @@ Npm is a tool that use to install packages. Npx is a tool that use to execute pa
 
 # Axios for HTTP Requests
 https://alligator.io/react/axios-react/
+
+# Mock Api to get Data
+> http://rallycoding.herokuapp.com/api/music_albums 

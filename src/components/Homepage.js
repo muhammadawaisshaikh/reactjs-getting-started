@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Homepage extends React.Component{
 
@@ -6,19 +7,46 @@ class Homepage extends React.Component{
         super(props);
  
         this.state = {
-            data: ''
+            data: [],
         };
     }
 
     componentDidMount() {
         console.log('componentDidMount');
+        this.getMovies();
     }
 
+    getMovies() {
+        const url = 'http://rallycoding.herokuapp.com/api/music_albums ';
+        
+        axios.get(url)
+        .then(res => {
+            const movies = res.data;
+            this.setState({ data: movies });
+
+            console.log(this.state.data);
+        })
+    }
 
     render() {
         return(
             <div>
-                <p>Homepage</p>
+                <div className="cards">
+                    {
+                        this.state.data.map((item, index) => {
+                            return (
+                                <div className="card" key={index}>
+                                    <div className="content">
+                                        <img src={item.image} />
+                                        <h3>{item.title}</h3>
+                                        <p>{item.artist}</p>
+                                        <a href={item.url} target="blank">Buy Now</a>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         );
     }
